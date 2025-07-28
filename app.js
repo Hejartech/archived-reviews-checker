@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- بخش تنظیمات: این مقادیر باید جایگزین شوند ---
     // آدرس قرارداد هوشمندی که توابع addReview و archiveReview را دارد
-    const contractAddress = "0x...YOUR_CONTRACT_ADDRESS"; // <-- اینجا آدرس قرارداد را بگذارید
+    const contractAddress = "0x6D3A8Fd5cF89f9a429BFaDFd970968F646AFF325"; // <-- اینجا آدرس قرارداد را بگذارید
     // کلید API از یک سرویس دهنده مثل Infura یا Alchemy
-    const apiKey = "YOUR_INFURA_OR_ALCHEMY_API_KEY"; // <-- اینجا کلید API خود را بگذارید
+    const apiKey = "74489a24b34d4b71a47f927b2327f8bc"; // <-- اینجا کلید API خود را بگذارید
     // ABI قرارداد
-    const contractABI = [ /* ... ABI کامل قرارداد اینجا قرار می‌گیرد ... */ ]; // <-- قدم بعدی توضیح می‌دهد چطور این را پیدا کنید
+    const contractABI = [{"inputs":[{"internalType":"address","name":"implementation","type":"address"},{"internalType":"bytes","name":"_data","type":"bytes"}],"stateMutability":"payable","type":"constructor"},{"inputs":[{"internalType":"address","name":"target","type":"address"}],"name":"AddressEmptyCode","type":"error"},{"inputs":[{"internalType":"address","name":"implementation","type":"address"}],"name":"ERC1967InvalidImplementation","type":"error"},{"inputs":[],"name":"ERC1967NonPayable","type":"error"},{"inputs":[],"name":"FailedCall","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"implementation","type":"address"}],"name":"Upgraded","type":"event"},{"stateMutability":"payable","type":"fallback"}]; // <-- قدم بعدی توضیح می‌دهد چطور این را پیدا کنید
 
     // --- پایان بخش تنظیمات ---
 
