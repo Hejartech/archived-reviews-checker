@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contractABI = [[{"inputs":[{"internalType":"address","name":"implementation","type":"address"},{"internalType":"bytes","name":"_data","type":"bytes"}],"stateMutability":"payable","type":"constructor"},{"inputs":[{"internalType":"address","name":"target","type":"address"}],"name":"AddressEmptyCode","type":"error"},{"inputs":[{"internalType":"address","name":"implementation","type":"address"}],"name":"ERC1967InvalidImplementation","type":"error"},{"inputs":[],"name":"ERC1967NonPayable","type":"error"},{"inputs":[],"name":"FailedCall","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"implementation","type":"address"}],"name":"Upgraded","type":"event"},{"stateMutability":"payable","type":"fallback"}]];
     
     // The actual name of the "review added" event from your contract.
-    const reviewAddedEventName = "Add Review"; // <-- IMPORTANT: Change if your event name is different!
+    const reviewAddedEventName = "ReviewCreated"; // <-- IMPORTANT: Change if your event name is different!
     
     // The actual name of the "review archived" event.
-    const reviewArchivedEventName = "Archive Review"; // <-- IMPORTANT: Change if your event name is different!
+    const reviewArchivedEventName = "ReviewArchived"; // <-- IMPORTANT: Change if your event name is different!
 
     // =================================================================
     // --- END OF CONFIGURATION ---
