@@ -1,65 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Archived Reviews Checker</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-      input, button {
-        padding: 10px;
-        margin: 10px 0;
-        font-size: 16px;
-      }
-      #result {
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Archived Reviews Checker</h1>
-    <p>Enter your wallet address:</p>
-    <input id="walletInput" type="text" placeholder="0x..." size="50" />
-    <br />
-    <button onclick="checkArchived()">Check</button>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بررسی آرشیو ریویوها</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>چه کسانی ریویوهای شما را آرشیو کرده‌اند؟</h1>
+        <p>آدرس کیف پول یا هندل توییتر خود را وارد کنید تا لیست افرادی که ریویوهای نوشته شده برای شما را آرشیو کرده‌اند، مشاهده کنید.</p>
+        
+        <input type="text" id="addressInput" placeholder="0x... یا @twitter_handle">
+        <button id="checkButton">بررسی کن</button>
+        
+        <div id="loader" class="loader" style="display: none;"></div>
+        
+        <div id="results">
+            <h2>نتایج:</h2>
+            <ul id="archiverList"></ul>
+            <p id="errorMessage" class="error"></p>
+        </div>
+    </div>
 
-    <div id="result"></div>
-
-    <script>
-      async function checkArchived() {
-        const wallet = document.getElementById("walletInput").value.trim();
-        const resultDiv = document.getElementById("result");
-        if (!wallet.startsWith("0x") || wallet.length !== 42) {
-          resultDiv.innerHTML = "<p style='color:red;'>Invalid address.</p>";
-          return;
-        }
-
-        resultDiv.innerHTML = "Checking logs…";
-
-        const api = `https://api.basescan.org/api?module=logs&action=getLogs&fromBlock=0&toBlock=latest&address=0x6d3a8fd5cf89f9a429bfadfd970968f646aff325&topic3=${wallet}&apikey=EGWJ2ZMJTP5VK1AM8YEVD4DYNA44EC2WWM`;
-
-        try {
-          const res = await fetch(api);
-          const data = await res.json();
-          if (!data.result || data.result.length === 0) {
-            resultDiv.innerHTML = "No archived reviews found.";
-            return;
-          }
-
-          let html = `<p>Found ${data.result.length} archived reviews:</p><ul>`;
-          for (const log of data.result) {
-            const author = "0x" + log.topics[2].slice(26);
-            html += `<li>Archived by: ${author}</li>`;
-          }
-          html += "</ul>";
-          resultDiv.innerHTML = html;
-        } catch (e) {
-          resultDiv.innerHTML = `<p style="color:red;">Error fetching data</p>`;
-        }
-      }
-    </script>
-  </body>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
