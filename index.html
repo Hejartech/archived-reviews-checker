@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بررسی آرشیو ریویوها</title>
+    <title>Review Archive Checker</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>چه کسانی ریویوهای شما را آرشیو کرده‌اند؟</h1>
-        <p>آدرس کیف پول یا هندل توییتر خود را وارد کنید تا لیست افرادی که ریویوهای نوشته شده برای شما را آرشیو کرده‌اند، مشاهده کنید.</p>
-        
-        <input type="text" id="addressInput" placeholder="0x... یا @twitter_handle">
-        <button id="checkButton">بررسی کن</button>
-        
+        <h1>Who Archived My Review?</h1>
+        <p>Enter your wallet address to see who archived reviews written about you.</p>
+
+        <input type="text" id="addressInput" placeholder="Enter your 0x... address">
+        <button id="checkButton">Check Now</button>
+
         <div id="loader" class="loader" style="display: none;"></div>
-        
+
         <div id="results">
-            <h2>نتایج:</h2>
+            <h2>Results:</h2>
             <ul id="archiverList"></ul>
-            <p id="errorMessage" class="error"></p>
+            <p id="message" class="message"></p>
         </div>
     </div>
 
