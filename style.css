@@ -1,7 +1,7 @@
 body {
-    font-family: 'Vazirmatn', sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,49 +10,51 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: #ffffff;
     padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     width: 90%;
-    max-width: 600px;
+    max-width: 550px;
     text-align: center;
 }
 
 h1 {
-    color: #2c3e50;
+    color: #1a1a1a;
+    font-weight: 600;
 }
 
 input[type="text"] {
-    width: calc(100% - 22px);
+    width: calc(100% - 24px);
     padding: 12px;
     margin-top: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
     font-size: 16px;
-    text-align: left;
-    direction: ltr;
+    font-family: 'Poppins', sans-serif;
 }
 
 button {
-    background-color: #3498db;
+    background: linear-gradient(45deg, #007bff, #0056b3);
     color: white;
     border: none;
     padding: 12px 25px;
     margin-top: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
 }
 
 #results {
     margin-top: 30px;
-    text-align: right;
+    text-align: left;
 }
 
 #archiverList {
@@ -61,23 +63,24 @@ button:hover {
 }
 
 #archiverList li {
-    background-color: #ecf0f1;
+    background-color: #f7f7f7;
     margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 6px;
     font-family: monospace;
     font-size: 14px;
-    direction: ltr;
+    word-wrap: break-word;
 }
 
-.error {
-    color: #e74c3c;
+.message {
+    color: #65676b;
     margin-top: 15px;
+    font-size: 15px;
 }
 
 .loader {
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
+    border-top: 5px solid #007bff;
     border-radius: 50%;
     width: 40px;
     height: 40px;
