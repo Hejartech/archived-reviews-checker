@@ -1,33 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Archive Checker</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Archived Reviews Checker</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Who Archived My Review?</h1>
-        <p>Enter your wallet address to see who archived reviews written about you.</p>
+  <h2>Archived Reviews Checker</h2>
+  <input id="addressInput" type="text" placeholder="Enter your wallet address" style="width:300px" />
+  <button id="searchBtn">Search</button>
+  <div id="result" style="margin-top:20px;"></div>
 
-        <input type="text" id="addressInput" placeholder="Enter your 0x... address">
-        <button id="checkButton">Check Now</button>
-
-        <div id="loader" class="loader" style="display: none;"></div>
-
-        <div id="results">
-            <h2>Results:</h2>
-            <ul id="archiverList"></ul>
-            <p id="message" class="message"></p>
-        </div>
-    </div>
-
-    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
-    
-    <script src="app.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
