@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contractAddress = "0x6d3a8fd5cf89f9a429bfadfd970968f646aff325";
 
     // Your API key from a service like Infura or Alchemy.
-    const apiKey = "bfe2f8e075df4ad182e97215853407ab"; // <--- FIX THIS LINE
+    const apiKey = "EGWJ2ZMJTP5VK1AM8YEVD4DYNA44EC2WWM"; // <--- FIX THIS LINE
 
     // The RPC URL for the Base network, constructed using your API key.
     const baseRpcUrl = `https://base.llamarpc.com`;
